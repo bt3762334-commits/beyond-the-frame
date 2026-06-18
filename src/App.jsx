@@ -5,6 +5,9 @@ import Timeline from "./components/Timeline";
 import Speaking from "./components/Speaking";
 import Works from "./components/Works";
 import Stats from "./components/Stats";
+import Certificates from "./components/Certificates";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -16,6 +19,9 @@ export default function App() {
       <Speaking />
       <Works />
       <Stats />
+      <Certificates />
+      <Contact />
+      <Footer />
     </>
   );
 }
