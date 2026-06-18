@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 *{
   margin:0;
@@ -6,44 +8,8 @@
   box-sizing:border-box;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
 body{
-  font-family:'Cairo',sans-serif;
   background:#070707;
   color:white;
+  font-family: 'Cairo', sans-serif;
 }
-.glass-card{
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.1);
-  padding:20px;
-  border-radius:16px;
-  backdrop-filter:blur(12px);
-}
-.section-title{
-  text-align:center;
-  font-size:3rem;
-  font-weight:800;
-  color:#facc15;
-}
-
-.section-text{
-  text-align:center;
-  color:#cfcfcf;
-  max-width:700px;
-  margin:20px auto;
-  line-height:2;
-}
-
-.timeline-dot{
-  width:18px;
-  height:18px;
-  background:#facc15;
-  border-radius:50%;
-  position:absolute;
-  left:9px;
-  margin-top:10px;
-}
-
