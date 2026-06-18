@@ -4,11 +4,11 @@ import "yet-another-react-lightbox/styles.css";
 import { motion } from "framer-motion";
 
 const images = [
-  "/images/certificate-1.jpeg",
-  "/images/certificate-2.jpeg",
-  "/images/certificate-3.jpeg",
-  "/images/certificate-4.jpeg",
-  "/images/certificate-5.jpeg"
+  "/certificate-1.jpeg",
+  "/certificate-2.jpeg",
+  "/certificate-3.jpeg",
+  "/certificate-4.jpeg",
+  "/certificate-5.jpeg"
 ];
 
 export default function Certificates() {
@@ -17,11 +17,10 @@ export default function Certificates() {
 
   return (
     <section id="certificates" className="py-32 px-6">
+
       <div className="max-w-6xl mx-auto">
 
-        <h2 className="section-title">
-          Certificates
-        </h2>
+        <h2 className="section-title">Certificates</h2>
 
         <div className="grid md:grid-cols-3 gap-8 mt-14">
 
@@ -29,11 +28,11 @@ export default function Certificates() {
             <motion.img
               key={i}
               src={img}
+              whileHover={{ scale: 1.05 }}
               onClick={() => {
                 setIndex(i);
                 setOpen(true);
               }}
-              whileHover={{ scale: 1.05 }}
               className="rounded-2xl cursor-pointer border border-white/10"
             />
           ))}
@@ -48,6 +47,7 @@ export default function Certificates() {
         />
 
       </div>
+
     </section>
   );
 }
