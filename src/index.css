@@ -13,3 +13,11 @@ body{
   color:white;
   font-family: 'Cairo', sans-serif;
 }
+
+html, body {
+  overflow-x: hidden;
+}
+
+canvas {
+  pointer-events: none;
+}
