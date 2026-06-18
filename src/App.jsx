@@ -1,7 +1,13 @@
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+
 export default function App() {
   return (
-    <div>
-      <h1>Beyond The Frame</h1>
-    </div>
+    <>
+      <Navbar />
+      <Hero />
+      <About />
+    </>
   );
 }
