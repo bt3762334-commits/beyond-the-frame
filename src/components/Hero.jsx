@@ -2,13 +2,11 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section
-      className="min-h-screen flex items-center justify-center text-center px-6"
-    >
+    <section className="min-h-screen flex items-center justify-center text-center px-6">
       <div className="max-w-5xl">
 
         <motion.img
-          src="/images/hero-1.jpeg"
+          src="/hero-1.jpeg"
           alt="Al Sayed Yahia"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -19,7 +17,7 @@ export default function Hero() {
         <motion.h1
           initial={{ y: 60, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: .3 }}
+          transition={{ delay: 0.3 }}
           className="text-5xl md:text-7xl font-extrabold mt-8"
         >
           Al Sayed Yahia
@@ -28,7 +26,7 @@ export default function Hero() {
         <motion.p
           initial={{ y: 60, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: .6 }}
+          transition={{ delay: 0.6 }}
           className="text-yellow-400 mt-4 text-xl"
         >
           Writer • Author • Public Speaker
@@ -42,6 +40,7 @@ export default function Hero() {
         >
           Every life is a story, and every story deserves to be told.
         </motion.p>
+
       </div>
     </section>
   );
