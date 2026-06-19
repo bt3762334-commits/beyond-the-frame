@@ -8,7 +8,7 @@ const images = [
 
 export default function Speaking() {
   return (
-    <section className="py-32 px-6">
+    <section id="speaking" className="py-32 px-6">
 
       <div className="max-w-6xl mx-auto">
 
