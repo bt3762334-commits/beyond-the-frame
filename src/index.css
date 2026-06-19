@@ -144,6 +144,56 @@ canvas {
   .divider-gold {
     @apply h-px w-24 mx-auto bg-gold-line;
   }
+
+  .info-card {
+    @apply glass-card flex flex-col items-center justify-center text-center gap-2 py-6;
+  }
+
+  .info-card .info-label {
+    @apply text-[11px] uppercase tracking-widest2 text-gold-400/80 font-semibold;
+  }
+
+  .info-card .info-value {
+    @apply text-lg sm:text-xl font-display font-semibold text-white;
+  }
+
+  .social-card {
+    @apply glass-card flex items-center gap-4 p-5 transition-transform duration-300;
+  }
+
+  .social-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .social-icon-wrap {
+    @apply flex items-center justify-center w-12 h-12 rounded-full shrink-0;
+    background: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(212,175,55,0.04));
+    border: 1px solid rgba(212,175,55,0.3);
+  }
+
+  .pub-card {
+    @apply relative glass-card overflow-hidden;
+  }
+
+  .pub-quote-mark {
+    @apply absolute -top-2 text-[7rem] sm:text-[9rem] leading-none font-display select-none pointer-events-none;
+    color: rgba(212,175,55,0.12);
+  }
+
+  .arabic-text {
+    direction: rtl;
+    @apply font-arabic text-right;
+  }
+
+  .cert-frame {
+    @apply relative rounded-2xl p-2 cursor-pointer;
+    background: linear-gradient(165deg, rgba(212,175,55,0.35), rgba(212,175,55,0.05));
+  }
+
+  .cert-frame-inner {
+    @apply relative rounded-xl overflow-hidden border border-white/10;
+    box-shadow: inset 0 0 0 1px rgba(212,175,55,0.15), 0 18px 40px -12px rgba(0,0,0,0.6);
+  }
 }
 
 @media (max-width: 768px) {
