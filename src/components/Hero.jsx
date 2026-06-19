@@ -3,7 +3,7 @@ import { ArrowDown, BookOpen, Mic, PenTool } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-center px-6 pt-32 pb-20 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center text-center px-6 pt-32 pb-20 overflow-hidden">
       <div className="absolute inset-0 -z-[5] bg-radial-fade" />
 
       <div className="max-w-4xl mx-auto relative">
