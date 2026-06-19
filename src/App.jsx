@@ -4,6 +4,7 @@ import About from "./components/About";
 import Timeline from "./components/Timeline";
 import Speaking from "./components/Speaking";
 import Works from "./components/Works";
+import Publications from "./components/Publications";
 import Stats from "./components/Stats";
 import Certificates from "./components/Certificates";
 import Contact from "./components/Contact";
@@ -24,6 +25,7 @@ export default function App() {
       <Timeline />
       <Speaking />
       <Works />
+      <Publications />
       <Stats />
       <Certificates />
       <Contact />
