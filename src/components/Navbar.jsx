@@ -3,13 +3,25 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#speaking", label: "Speaking" },
-  { href: "#works", label: "Works" },
+  { href: "#about",        label: "About"        },
+  { href: "#speaking",     label: "Speaking"     },
+  { href: "#works",        label: "Works"        },
   { href: "#publications", label: "Publications" },
   { href: "#certificates", label: "Certificates" },
-  { href: "#contact", label: "Contact" }
+  { href: "#contact",      label: "Contact"      },
 ];
+
+/* Contact → scroll to footer */
+function handleNav(e, href, closeFn) {
+  if (href === "#contact") {
+    e.preventDefault();
+    if (closeFn) closeFn();
+    const footer = document.querySelector("footer");
+    if (footer) footer.scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
+  if (closeFn) closeFn();
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -24,10 +36,10 @@ export default function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [open]);
+
+  const close = () => setOpen(false);
 
   return (
     <motion.nav
@@ -44,7 +56,7 @@ export default function Navbar() {
         <a
           href="#"
           className="flex items-center gap-2.5 group"
-          onClick={() => setOpen(false)}
+          onClick={close}
         >
           <span className="w-9 h-9 rounded-full border border-gold-500/60 flex items-center justify-center font-display font-bold text-gold-400 text-sm group-hover:shadow-goldsm transition-shadow">
             AY
@@ -54,18 +66,26 @@ export default function Navbar() {
           </span>
         </a>
 
+        {/* Desktop links */}
         <div className="hidden lg:flex items-center gap-9">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
+              onClick={(e) => handleNav(e, l.href, null)}
               className="relative text-sm tracking-wide text-white/75 hover:text-white transition-colors group"
             >
               {l.label}
               <span className="absolute -bottom-1.5 left-0 w-0 h-px bg-gold-500 transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
-          <a href="#contact" className="btn-gold !px-6 !py-2.5 !text-sm">
+          {/* Let's Talk → WhatsApp */}
+          <a
+            href="https://wa.me/201064594052"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-gold !px-6 !py-2.5 !text-sm"
+          >
             Let's Talk
           </a>
         </div>
@@ -79,6 +99,7 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -96,15 +117,18 @@ export default function Navbar() {
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: i * 0.05 }}
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => handleNav(e, l.href, close)}
                   className="py-3 text-base text-white/85 border-b border-white/5 last:border-none"
                 >
                   {l.label}
                 </motion.a>
               ))}
+              {/* Mobile Let's Talk → WhatsApp */}
               <a
-                href="#contact"
-                onClick={() => setOpen(false)}
+                href="https://wa.me/201064594052"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={close}
                 className="btn-gold mt-5 !py-3 text-center"
               >
                 Let's Talk
