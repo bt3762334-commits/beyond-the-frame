@@ -7,18 +7,13 @@ import Works from "./components/Works";
 import Publications from "./components/Publications";
 import Stats from "./components/Stats";
 import Certificates from "./components/Certificates";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-
 import Background from "./components/Background";
-import Cursor from "./components/Cursor";
 
 export default function App() {
   return (
     <>
       <Background />
-      <Cursor />
-
       <Navbar />
       <Hero />
       <About />
@@ -28,7 +23,6 @@ export default function App() {
       <Publications />
       <Stats />
       <Certificates />
-      <Contact />
       <Footer />
     </>
   );
