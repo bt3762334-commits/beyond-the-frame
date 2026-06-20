@@ -61,6 +61,7 @@ export default function Footer() {
 
   return (
     <footer
+      id="contact"
       style={{
         background:
           "linear-gradient(180deg, #0a0908 0%, #0f0e0b 40%, #0a0908 100%)",
