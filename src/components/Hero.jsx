@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 import { ArrowDown, BookOpen, Mic, PenTool } from "lucide-react";
 
+function scrollToFooter(e) {
+  e.preventDefault();
+  const footer = document.querySelector("footer");
+  if (footer) footer.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center text-center px-6 pt-32 pb-20 overflow-hidden">
@@ -13,9 +19,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="flex justify-center mb-8"
         >
-          <span className="eyebrow">
-            Portfolio of Al Sayed Yahia
-          </span>
+          <span className="eyebrow">Portfolio of Al Sayed Yahia</span>
         </motion.div>
 
         <motion.div
@@ -79,8 +83,14 @@ export default function Hero() {
           <a href="#works" className="btn-gold">
             Explore My Work
           </a>
-          <a href="#contact" className="btn-ghost">
-            Get In Touch
+          {/* Let's Talk → opens WhatsApp */}
+          <a
+            href="https://wa.me/201064594052"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-ghost"
+          >
+            Let's Talk
           </a>
         </motion.div>
       </div>
